@@ -15,19 +15,14 @@ io.on("connection", (socket) => {
     console.log("Server Connection : On")
 
     //Custom Events
-    socket.emit("newEmail", {
+    socket.emit("newMessage", {
         from: "Raj Vasikarla",
         text: "Howdy!!",
         createdAt : new Date().getDate
     });
 
-    socket.emit("impEvent", {
-        from: "Raj Vasikarla",
-        to: "Swetha Yerramsetti!!"
-    });
-
-    socket.on("createEmail", (newEmail) => {
-        console.log("Create Email Event", newEmail);
+    socket.on("createMessage", (message) => {
+        console.log("Create Message Event", message);
     });
 
     socket.on("disconnect", () => {
