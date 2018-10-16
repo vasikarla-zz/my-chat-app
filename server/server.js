@@ -10,11 +10,15 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
+io.on("connection", (socket) => {
+    console.log("Server Connection : On")
+
+    socket.on("disconnect", () => {
+        console.log("Server Connection : OFF");
+    })
+});
+
 //Start and Listen
 server.listen(PORT, () => {
     console.log(`Server is up on port : ${PORT}`);
-});
-
-io.on('connection', (socket) => {
-    console.log("Connection Established");
 });

@@ -9,6 +9,14 @@
     <script>
         var socket = io();
         console.log(socket);
+
+        socket.on("connect", () => {
+            console.log("Client Connection : ON");
+        });
+
+        socket.on("disconnect", () => {
+            console.log("Client Connection : OFF.");
+        });
     </script>
     
 </head>
