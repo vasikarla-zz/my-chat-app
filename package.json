@@ -1,0 +1,8 @@
+{
+  "name": "my-chat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vasikarla/my-chat-app.git",
+  "author": "Raj Vasikarla <raj_vasikarla@intuit.com>",
+  "license": "MIT"
+}
