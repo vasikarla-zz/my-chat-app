@@ -9,11 +9,6 @@ socket.on("newMessage", function (msg) {
     console.log("New Message Event : Client", msg);
 });
 
-socket.emit("createMessage", {
-    from: "swetha@ridecell.com",
-    text: "Hi"
-});
-
 socket.on("disconnect", function () {
     console.log("Client Connection : OFF.");
 });
