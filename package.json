@@ -5,6 +5,12 @@
   "repository": "git@github.com:vasikarla/my-chat-app.git",
   "author": "Raj Vasikarla <raj_vasikarla@intuit.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": "8.11.1"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "socketio": "^1.0.0"
