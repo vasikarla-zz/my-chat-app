@@ -10,13 +10,23 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
+//Default Eventss
 io.on("connection", (socket) => {
     console.log("Server Connection : On")
+
+    //Custom Events
+    socket.emit("newEmail", {
+        from: "Raj Vasikarla",
+        text: "Howdy!!",
+        createdAt : new Date().getDate
+    });
 
     socket.on("disconnect", () => {
         console.log("Server Connection : OFF");
     })
 });
+
+
 
 //Start and Listen
 server.listen(PORT, () => {
