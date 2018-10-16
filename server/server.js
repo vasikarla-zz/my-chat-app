@@ -21,6 +21,15 @@ io.on("connection", (socket) => {
         createdAt : new Date().getDate
     });
 
+    socket.emit("impEvent", {
+        from: "Raj Vasikarla",
+        to: "Swetha Yerramsetti!!"
+    });
+
+    socket.on("createEmail", (newEmail) => {
+        console.log("Create Email Event", newEmail);
+    });
+
     socket.on("disconnect", () => {
         console.log("Server Connection : OFF");
     })
