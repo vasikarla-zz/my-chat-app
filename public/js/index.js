@@ -12,3 +12,7 @@ socket.on("newMessage", function (msg) {
 socket.on("disconnect", function () {
     console.log("Client Connection : OFF.");
 });
+
+socket.emit("createMessage", function () {
+    console.log("Client Connection : OFF.");
+});

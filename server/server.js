@@ -23,7 +23,7 @@ io.on("connection", (socket) => {
     //Custom Events
     socket.on("createMessage", (message) => {
         console.log("Create Message Event", message);
-        socket.emit('newMessage', generateMessage(message.from, message.text)) 
+        io.emit('newMessage', generateMessage(message.from, message.text)) 
     });
 
     socket.on("disconnect", () => {
