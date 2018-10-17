@@ -17,7 +17,7 @@ io.on("connection", (socket) => {
     //Custom Events
     socket.on("createMessage", (message) => {
         console.log("Create Message Event", message);
-        io.emit('newMessage', {
+        socket.broadcast.emit('newMessage', {
             from: message.from,
             text: message.text,
             createdAt: new Date().getTime()
