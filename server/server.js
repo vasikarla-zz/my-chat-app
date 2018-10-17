@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
         io.emit('newMessage', {
             from: message.from,
             text: message.text,
-            createdAt: "123"
+            createdAt: new Date().getTime()
         }) 
     });
 
