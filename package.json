@@ -1,18 +1,25 @@
 {
-  "name": "my-chat-app",
+  "name": "node-chat-app",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "repository": "git@github.com:vasikarla/my-chat-app.git",
-  "author": "Raj Vasikarla <raj_vasikarla@intuit.com>",
-  "license": "MIT",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "engines": {
     "node": "8.11.1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "socket.io": "^2.1.1"
+    "express": "^4.14.0",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2"
   }
 }

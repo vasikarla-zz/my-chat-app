@@ -1,23 +1,20 @@
 var socket = io();
-console.log(socket);
 
-socket.on("connect",  function() {
-    console.log("Client Connection : ON");
+socket.on('connect', function () {
+  console.log('Connected to server');
 });
 
-socket.on("newMessage", function (msg) {
-    console.log("New Message Event : Client", msg);
+socket.on('disconnect', function () {
+  console.log('Disconnected from server');
 });
 
-socket.on("disconnect", function () {
-    console.log("Client Connection : OFF.");
+socket.on('newMessage', function (message) {
+  console.log('newMessage', message);
 });
 
-socket.emit("createMessage", {
-    from: "Ryan",
-    text: "Hi"
+socket.emit('createMessage', {
+  from: 'Frank',
+  text: 'Hi'
+}, function (data) {
+  console.log('Got it', data);
 });
-
-socket.on("newEvent", () => {
-    console.log("New Event Ack From Server");
-}); 
