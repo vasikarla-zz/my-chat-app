@@ -17,3 +17,7 @@ socket.emit("createMessage", {
     from: "Ryan",
     text: "Hi"
 });
+
+socket.on("newEvent", () => {
+    console.log("New Event Ack From Server");
+}); 
