@@ -10,6 +10,9 @@ socket.on('disconnect', function () {
 
 socket.on('newMessage', function (message) {
   console.log('newMessage', message);
+  var list = jQuery("<li></li>");
+  list.text(`${message}`);
+  jQuery("messages").append(list);
 });
 
 socket.emit('createMessage', {
@@ -27,7 +30,7 @@ $("#message-form").on('submit', function (e) {
 
     socket.emit('createMessage', {
         from: "User",
-        text: $("#message").val()
+        text: jQuery("#message").val()
     }, function () {
         console.log("Ack");
     });
