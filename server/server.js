@@ -28,7 +28,11 @@ io.on("connection", (socket) => {
 
     socket.on("disconnect", () => {
         console.log("Server Connection : OFF");
-    })
+    });
+
+    socket.emit("newEvent", () => {
+        console.log("New Event Fired From Server");
+    });    
 });
 
 

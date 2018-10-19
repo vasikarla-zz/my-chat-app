@@ -13,6 +13,7 @@ socket.on("disconnect", function () {
     console.log("Client Connection : OFF.");
 });
 
-socket.emit("createMessage", function () {
-    console.log("Client Connection : OFF.");
+socket.emit("createMessage", {
+    from: "Ryan",
+    text: "Hi"
 });
