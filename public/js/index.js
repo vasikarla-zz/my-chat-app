@@ -23,4 +23,13 @@ socket.emit('createMessage', {
 $("#message-form").on('submit', function (e) {
     console.log(e);
     e.preventDefault();
+
+
+    socket.emit('createMessage', {
+        from: "User",
+        text: $("#message").val()
+    }, function () {
+        console.log("Ack");
+    });
+
 });
