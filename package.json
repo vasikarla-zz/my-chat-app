@@ -2,7 +2,7 @@
   "name": "node-chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "chat.js",
   "scripts": {
     "start": "node server/server.js",
     "test": "mocha server/**/*.test.js",
